@@ -1,0 +1,579 @@
+/* 기본 스타일 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    transition: font-size 0.3s ease;
+}
+
+/* 폰트 크기 조절 클래스 */
+body.font-small {
+    font-size: 14px;
+}
+
+body.font-large {
+    font-size: 18px;
+}
+
+body.font-xlarge {
+    font-size: 20px;
+}
+
+/* 헤더 */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    transition: color 0.3s;
+}
+
+/* 헤더 컨트롤 버튼 그룹 */
+.header-controls {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* 폰트 크기 조절 버튼 */
+.font-size-controls {
+    display: flex;
+    gap: 0.25rem;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    padding: 0.25rem;
+    border: 1px solid #ddd;
+}
+
+.font-size-btn {
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #2c3e50;
+    transition: all 0.3s;
+    padding: 0;
+}
+
+.font-size-btn:hover {
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+/* 다크모드 버튼 */
+.dark-mode-btn {
+    background: transparent;
+    border: 2px solid #2c3e50;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    padding: 0;
+}
+
+.dark-mode-btn:hover {
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.dark-mode-btn .light-icon {
+    display: none;
+}
+
+.dark-mode-btn .dark-icon {
+    display: block;
+}
+
+/* 내비게이션 */
+nav {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #2c3e50;
+    border-bottom: 2px solid #2c3e50;
+}
+
+/* 메인 콘텐츠 */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.diary-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.diary-form h2 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+/* 폼 스타일 */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input[type="date"],
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="date"]:focus,
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2c3e50;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 200px;
+}
+
+/* 버튼 */
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #34495e;
+}
+
+/* 일기 목록 스타일 */
+.diary-list {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+.diary-list h2 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.diary-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.diary-item {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.diary-item:hover {
+    background-color: #e9ecef;
+    transform: translateX(5px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.diary-item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.diary-item-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.diary-item-preview {
+    color: #888;
+    font-size: 0.95rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 3rem;
+    color: #888;
+    font-size: 1.1rem;
+}
+
+/* 모달 스타일 */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.modal-content h2 {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    padding-right: 2rem;
+}
+
+.modal-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-body {
+    color: #333;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.delete-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* 다크모드 스타일 */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background-color: #2d2d2d;
+    border-bottom-color: #444;
+}
+
+body.dark-mode header h1 {
+    color: #e0e0e0;
+}
+
+body.dark-mode nav ul li a {
+    color: #b0b0b0;
+}
+
+body.dark-mode nav ul li a:hover {
+    color: #e0e0e0;
+    border-bottom-color: #e0e0e0;
+}
+
+body.dark-mode .diary-form {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .diary-form h2 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .form-group label {
+    color: #b0b0b0;
+}
+
+body.dark-mode .form-group input[type="date"],
+body.dark-mode .form-group input[type="text"],
+body.dark-mode .form-group textarea {
+    background-color: #1a1a1a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .form-group input[type="date"]:focus,
+body.dark-mode .form-group input[type="text"]:focus,
+body.dark-mode .form-group textarea:focus {
+    border-color: #666;
+}
+
+body.dark-mode .submit-btn {
+    background-color: #444;
+}
+
+body.dark-mode .submit-btn:hover {
+    background-color: #555;
+}
+
+body.dark-mode .dark-mode-btn {
+    border-color: #e0e0e0;
+    color: #e0e0e0;
+}
+
+body.dark-mode .dark-mode-btn:hover {
+    background-color: #e0e0e0;
+    color: #1a1a1a;
+}
+
+body.dark-mode .dark-mode-btn .dark-icon {
+    display: none;
+}
+
+body.dark-mode .dark-mode-btn .light-icon {
+    display: block;
+}
+
+body.dark-mode .font-size-controls {
+    background-color: #1a1a1a;
+    border-color: #444;
+}
+
+body.dark-mode .font-size-btn {
+    color: #e0e0e0;
+}
+
+body.dark-mode .font-size-btn:hover {
+    background-color: #e0e0e0;
+    color: #1a1a1a;
+}
+
+body.dark-mode .diary-list {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .diary-list h2 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .diary-item {
+    background-color: #1a1a1a;
+    border-color: #444;
+}
+
+body.dark-mode .diary-item:hover {
+    background-color: #252525;
+}
+
+body.dark-mode .diary-item-title {
+    color: #e0e0e0;
+}
+
+body.dark-mode .diary-item-date {
+    color: #b0b0b0;
+}
+
+body.dark-mode .diary-item-preview {
+    color: #999;
+}
+
+body.dark-mode .empty-message {
+    color: #999;
+}
+
+body.dark-mode .modal-content {
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .close {
+    color: #aaa;
+}
+
+body.dark-mode .close:hover {
+    color: #e0e0e0;
+}
+
+body.dark-mode .modal-content h2 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .modal-date {
+    color: #b0b0b0;
+}
+
+body.dark-mode .modal-body {
+    color: #e0e0e0;
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .delete-btn {
+    background-color: #c82333;
+}
+
+body.dark-mode .delete-btn:hover {
+    background-color: #bd2130;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .diary-form {
+        padding: 1.5rem;
+    }
+
+    .header-top {
+        padding: 0 0.5rem;
+    }
+
+    .header-controls {
+        right: 0.5rem;
+        gap: 0.25rem;
+    }
+
+    .font-size-controls {
+        gap: 0.15rem;
+        padding: 0.15rem;
+    }
+
+    .font-size-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+
+    .dark-mode-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+

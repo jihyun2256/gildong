@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>길동이의 코딩 일기</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="header-top">
+            <h1>길동이의 코딩 일기</h1>
+            <div class="header-controls">
+                <div class="font-size-controls">
+                    <button id="fontDecrease" class="font-size-btn" aria-label="폰트 크기 줄이기">A-</button>
+                    <button id="fontReset" class="font-size-btn" aria-label="폰트 크기 초기화">A</button>
+                    <button id="fontIncrease" class="font-size-btn" aria-label="폰트 크기 늘리기">A+</button>
+                </div>
+                <button id="darkModeToggle" class="dark-mode-btn" aria-label="다크모드 전환">
+                    <span class="dark-icon">🌙</span>
+                    <span class="light-icon">☀️</span>
+                </button>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">홈</a></li>
+                <li><a href="#write">일기쓰기</a></li>
+                <li><a href="#list">목록</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main>
+        <!-- 일기 작성 섹션 -->
+        <section id="write-section" class="diary-form">
+            <h2>일기 작성</h2>
+            <form id="diaryForm">
+                <div class="form-group">
+                    <label for="date">날짜</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">제목</label>
+                    <input type="text" id="title" name="title" placeholder="일기 제목을 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="content">내용</label>
+                    <textarea id="content" name="content" rows="10" placeholder="오늘의 코딩 일기를 작성해보세요..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">저장하기</button>
+            </form>
+        </section>
+
+        <!-- 일기 목록 섹션 -->
+        <section id="list-section" class="diary-list" style="display: none;">
+            <h2>일기 목록</h2>
+            <div id="diaryList" class="diary-list-container">
+                <!-- 일기 목록이 여기에 동적으로 추가됩니다 -->
+            </div>
+        </section>
+
+        <!-- 일기 상세 보기 모달 -->
+        <div id="diaryModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <p class="modal-date" id="modalDate"></p>
+                <div class="modal-body" id="modalContent"></div>
+                <button id="deleteDiary" class="delete-btn">삭제하기</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="darkmode.js"></script>
+    <script src="fontsize.js"></script>
+    <script src="diary.js"></script>
+</body>
+</html>
+
